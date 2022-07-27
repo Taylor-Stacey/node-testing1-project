@@ -8,8 +8,11 @@
  */
 function trimProperties(obj) {
   // ✨ implement
+  return Object.keys(obj).reduce((acc, curr) => {
+    acc[curr] = obj[curr].trim()
+    return acc;
+  }, {});
 }
-
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
  * @param {object} obj - an object with properties that are strings
@@ -20,6 +23,10 @@ function trimProperties(obj) {
  */
 function trimPropertiesMutation(obj) {
   // ✨ implement
+  for(let prop in obj) {
+    obj[prop] = obj[prop].trim()
+  }
+  return obj
 }
 
 /**
